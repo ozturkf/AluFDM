@@ -1,9 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4019.2">
-  <DUT Name="ST_Config_Valve" Id="{1e5eceea-3093-4235-b042-7f427d397e5f}">
-    <Declaration><![CDATA[TYPE ST_Config_Valve:
-STRUCT
-END_STRUCT
-END_TYPE]]></Declaration>
-  </DUT>
-</TcPlcObject>
