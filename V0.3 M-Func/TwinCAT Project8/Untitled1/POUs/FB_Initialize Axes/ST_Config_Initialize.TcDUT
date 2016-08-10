@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4019.2">
+  <DUT Name="ST_Config_Initialize" Id="{595eafdc-8472-46ea-b232-d94a509ff692}">
+    <Declaration><![CDATA[TYPE ST_Config_Initialize :
+STRUCT
+	nXA					:UDINT:=1;
+	nYA					:UDINT:=2;
+	nZA					:UDINT:=0;
+	nGroup				:UDINT:=3;
+	tTimeO				:TIME:=T#5S;
+	g_strProgram		:STRING := 'C:\Users\Furkan\Desktop\FirstNciSample\TestIt.nc';
+	bExe				:BOOL:=TRUE;
+	bSta				:BOOL:=TRUE;
+	bSto				:BOOL:=FALSE;
+	
+END_STRUCT
+END_TYPE
+]]></Declaration>
+  </DUT>
+</TcPlcObject>

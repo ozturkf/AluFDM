@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4019.2">
+  <DUT Name="ST_MTO_Input" Id="{9d3a6b8a-944b-471b-856f-8710fa258a7e}">
+    <Declaration><![CDATA[TYPE ST_MTO_Input :
+STRUCT
+	bOutputShortCircuit:			BOOL;
+	bOutputBufferOverflow:			BOOL;
+	bOutputState:					BOOL;
+	bWarning:						BOOL;
+	b2InputCycleCounter:			BOOL;
+	iOutputOrderFeedback:			USINT;
+	iEventsInOutput:				USINT;
+END_STRUCT
+END_TYPE
+]]></Declaration>
+  </DUT>
+</TcPlcObject>

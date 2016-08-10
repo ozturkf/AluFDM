@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4019.2">
+  <DUT Name="ST_PAIn_Interpreter" Id="{113f6861-94f1-45b5-b164-a15daa9739a9}">
+    <Declaration><![CDATA[TYPE ST_PAIn_Interpreter :
+STRUCT
+
+		in_stItpToPlc			:NCTOPLC_NCICHANNEL_REF;
+	
+END_STRUCT
+END_TYPE]]></Declaration>
+  </DUT>
+</TcPlcObject>

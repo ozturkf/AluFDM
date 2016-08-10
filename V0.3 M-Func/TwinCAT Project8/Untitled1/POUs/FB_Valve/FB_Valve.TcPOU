@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4019.2">
+  <POU Name="FB_Valve" Id="{f8ce5c3c-09c2-4cf3-b576-3ff9156ff912}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_Valve
+VAR_INPUT
+	
+	stConfig:	ST_Config_Valve;
+	stPAIn	:	ST_PAIn_Valve;
+	
+	iPeriod: 	UDINT:= 40000000;
+	tPeriod: 	TIME;
+	iDuration: 	UDINT:= 9000000;
+	bActivate: 	BOOL:=TRUE;
+	
+END_VAR
+VAR_OUTPUT
+	stPAOut	:	ST_PAOut_Valve;
+END_VAR
+	
+VAR
+	iEvent1: 		UDINT;
+	iEvent2:		UDINT;	
+	nNoOfOutputEvents: INT;
+	nOutputOrderCnt: USINT;
+	
+	tnHalt: 			TON;
+ 	iCurrentTime:  	ULINT;
+ 	iCurrentTime32:  	UDINT;
+	
+	nScheduleNo: INT;
+	iState:			UINT:=0;
+	iLastTime: UDINT;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[	iCurrentTime := F_GetCurDcTaskTime64();
+	iCurrentTime32:=ULINT_TO_UDINT(iCurrentTime AND 16#FFFFFFFF); 
+	
+CASE iState OF
+
+0:	
+	stPAOut.stMTOOutputs1.bBufferReset:=TRUE;
+	iState:=iState+1;
+
+1:
+	stPAOut.stMTOOutputs1.bBufferReset:=FALSE;
+	iState:=iState+1;
+		
+2:
+	IF stPAIn.stDOXStatus1.bReadyToActivate THEN 
+	iState:=10;
+	iLastTime:=iCurrentTime32+100000000;
+	END_IF
+
+10:
+	
+	
+	iEvent1:=(iLastTime+iPeriod) ; 
+	iEvent2:=(iEvent1+iDuration)  ; 
+	iLastTime:=iEvent1;	 
+
+	stPAOut.stMTOOutputs1.tOutputEventTime1:=iEvent1;
+	stPAOut.stMTOOutputs1.tOutputEventTime2:=iEvent2;	
+	stPAOut.stMTOOutputs1.bOutputEventState1:=1;
+	stPAOut.stMTOOutputs1.bOutputEventState2:=0;
+
+	iState:=20;
+(*10:
+	iEvent1:=(iCurrentTime32+iPeriod) MOD 2147483648 ; 
+	iEvent2:=(iEvent1+iDuration) MOD 2147483648 ; 
+	
+	
+	iLastTime:=iEvent1;	 
+	
+	iState:=20; *)
+20: 
+IF nScheduleNo=3 THEN 
+	nScheduleNo := 0;
+	nOutputOrderCnt:=stPAIn.stMTOInputs1.iOutputOrderFeedback+1;
+	iState:=30;
+ELSE
+	nScheduleNo := nScheduleNo + 1; 
+END_IF 
+
+30:
+	IF nScheduleNo=3 THEN 
+	nScheduleNo := 0;
+	IF NOT INT_TO_BOOL(MAIN.stPAIn.stPAInDrops.stValve.stMTOInputs1.iEventsInOutput) THEN
+		iState:=10;
+	END_IF
+	ELSE
+	nScheduleNo := nScheduleNo + 1; 
+	END_IF 
+
+
+END_CASE
+
+stPAOut.stMTOOutputs1.tOutputEventTime1:=iEvent1;
+stPAOut.stMTOOutputs1.tOutputEventTime2:=iEvent2;	
+
+
+stPAOut.stMTOOutputs1.bOutputEventState1:=1;
+stPAOut.stMTOOutputs1.bOutputEventState2:=0;
+
+stPAOut.stMTOOutputs1.iNoOfOutputEvents:=2;
+stPAOut.stMTOOutputs1.iOutputOrderCount:=nOutputOrderCnt;
+]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>

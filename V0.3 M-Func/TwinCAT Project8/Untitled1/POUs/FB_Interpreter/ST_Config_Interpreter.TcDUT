@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4019.2">
+  <DUT Name="ST_Config_Interpreter" Id="{382a84d9-f452-4f76-8ef6-303229c3e20c}">
+    <Declaration><![CDATA[TYPE ST_Config_Interpreter :
+STRUCT
+	bInit				:BOOL;
+	nXA					:UDINT:=1;
+	nYA					:UDINT:=2;
+	nZA					:UDINT:=0;
+	nGroup				:UDINT:=3;
+	tTimeO				:TIME:=T#5S;
+	g_strProgram		:STRING := 'D:\Semester\NC.nc';
+	bExe				:BOOL:=TRUE;
+	bSta				:BOOL:=TRUE;
+	bSto				:BOOL:=FALSE;
+	
+END_STRUCT
+END_TYPE
+]]></Declaration>
+  </DUT>
+</TcPlcObject>

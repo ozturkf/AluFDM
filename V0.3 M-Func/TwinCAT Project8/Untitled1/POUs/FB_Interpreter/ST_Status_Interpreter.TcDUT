@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4019.2">
+  <DUT Name="ST_Status_Interpreter" Id="{c371bb8e-d2c1-46ff-8f7b-bc3cba8e798f}">
+    <Declaration><![CDATA[TYPE ST_Status_Interpreter :
+STRUCT
+	bFini	:BOOL;
+	bBus	:BOOL;
+	bErr	:BOOL;
+	nErr	:UDINT;
+	iItpState:	UDINT;
+	iState: INT;
+END_STRUCT
+END_TYPE
+]]></Declaration>
+  </DUT>
+</TcPlcObject>

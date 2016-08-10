@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4019.2">
+  <POU Name="MAIN" Id="{3a9a4886-241f-4d1e-aa22-63771a14775f}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM MAIN
+
+VAR
+	stIntern			:ST_Intern_Main;
+	fbInitialize		:FB_Initialize;
+	fbInterpreter		:FB_Interpreter;
+	stStatus			:ST_Status_Main;
+	iState				:INT;
+END_VAR
+
+VAR_INPUT
+	stConfig			:ST_Config_Main;
+	stPAIn	AT%I*		:ST_PAIn_Main;
+	
+END_VAR
+
+VAR_OUTPUT
+	stPAOut	AT%Q*		:ST_PAOut_Main;
+	
+END_VAR]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[fbInitialize(stPAIn:=stPAIn.stInit,
+			stConfig:=stConfig.stInit,
+			stStatus=>stStatus.stInit	);
+
+
+fbInterpreter(stConfig:=stConfig.stInterp,
+				stPAOut=>stPAOut.stInterp,
+				stStatus=>stStatus.stInterp);
+
+fbInterpreter.stPAIn.in_stItpToPlc:=stPAIn.stInterp.in_stItpToPlc;	
+
+
+CASE iState OF
+	
+		00: fbInitialize.bExec:=TRUE;
+	
+		IF NOT fbInitialize.bBus THEN
+			IF fbInitialize.bFini THEN 
+				iState:=10;
+			END_IF
+		END_IF
+		
+		10: fbInterpreter.bExec:=TRUE;
+	
+		IF NOT fbInterpreter.bBus THEN
+			IF fbInterpreter.bFini THEN 
+				iState:=20;
+			END_IF
+		END_IF
+		
+	
+END_CASE]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>

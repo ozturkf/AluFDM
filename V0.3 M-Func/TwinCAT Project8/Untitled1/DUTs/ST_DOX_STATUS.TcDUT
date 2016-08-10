@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4019.2">
+  <DUT Name="ST_DOX_STATUS" Id="{6eefb4ac-0389-4e2e-96fd-3676a1c1a2d0}">
+    <Declaration><![CDATA[TYPE ST_DOX_STATUS :
+STRUCT
+	bReadyToActivate:	BIT;
+	bPWMActive:			BIT;
+	bWarning:			BIT;
+	bError:				BIT;
+	bTxPDO:				BIT;
+END_STRUCT
+END_TYPE
+]]></Declaration>
+  </DUT>
+</TcPlcObject>

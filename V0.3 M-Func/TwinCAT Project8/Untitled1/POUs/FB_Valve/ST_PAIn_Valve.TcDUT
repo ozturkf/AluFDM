@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4019.2">
+  <DUT Name="ST_PAIn_Valve" Id="{8a14e6cb-0820-45ae-95c2-ea270fe7026d}">
+    <Declaration><![CDATA[TYPE ST_PAIn_Valve :
+STRUCT
+	stDOXStatus1: ST_DOX_STATUS;
+	
+	stMTOInputs1: ST_MTO_Input;
+	
+	
+	
+
+END_STRUCT
+END_TYPE
+]]></Declaration>
+  </DUT>
+</TcPlcObject>

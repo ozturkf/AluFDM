@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4019.2">
+  <DUT Name="ST_NciChannelFromPlc" Id="{a24f830e-bc2e-488d-9820-6442dcbb71c3}">
+    <Declaration><![CDATA[TYPE ST_NciChannelFromPlc :
+STRUCT
+    nSkipLine        : WORD; (* Mask to skip lines *)
+    nItpMode         : WORD;
+    nMFuncGranted    : WORD; (* granted signal of the M-function *)
+    nReserved1       : ARRAY[7..8] OF BYTE;
+    nChaAxesOvr      : DWORD; (* Channel override in percent * 100 *)
+    nChaSpindleOvr   : DWORD;
+    nReserved2       : ARRAY[17..128] OF BYTE;
+END_STRUCT
+END_TYPE ]]></Declaration>
+  </DUT>
+</TcPlcObject>

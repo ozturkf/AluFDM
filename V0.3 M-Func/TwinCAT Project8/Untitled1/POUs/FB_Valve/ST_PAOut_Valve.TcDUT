@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4019.2">
+  <DUT Name="ST_PAOut_Valve" Id="{36902021-48d3-4bef-9b24-0bfad59ff62e}">
+    <Declaration><![CDATA[TYPE ST_PAOut_Valve :
+STRUCT
+	stMTOOutputs1:			ST_MTO_Outputs;
+	stDoxControl1:			ST_DOX_Control;
+	
+	
+	
+END_STRUCT
+END_TYPE
+]]></Declaration>
+  </DUT>
+</TcPlcObject>

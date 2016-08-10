@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4019.2">
+  <DUT Name="ST_MTO_Outputs" Id="{449e3c42-280f-439e-a892-f3dfd95edefc}">
+    <Declaration><![CDATA[TYPE ST_MTO_Outputs :
+STRUCT
+	
+	bBufferReset    :				BIT;	//73.0
+	bManualOutputState    :			BIT;
+	bForceOrder    :				BIT:=1;
+	bEnableManualOp  :				BIT;	//73.3
+	bBit4  :						BIT;
+	bBit5  :						BIT;
+	bBit6  :						BIT;
+	bBit7  :						BIT;
+	iOutputOrderCount  :			USINT;	//74.0
+	iNoOfOutputEvents  :			USINT;	//75.0
+	Bbyte24:						BYTE;
+	bOutputEventState1	:			BIT;
+	bOutputEventState2	:			BIT;
+	tOutputEventTime1:				UDINT;
+	tOutputEventTime2:				UDINT;
+END_STRUCT
+END_TYPE
+]]></Declaration>
+  </DUT>
+</TcPlcObject>

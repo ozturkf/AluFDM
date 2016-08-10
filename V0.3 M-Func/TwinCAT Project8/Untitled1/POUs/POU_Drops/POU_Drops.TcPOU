@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4019.2">
+  <POU Name="POU_Drops" Id="{f5b252c0-63c3-48ee-89d5-001910ed9282}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM POU_Drops
+VAR
+	fbValve				:FB_Valve;
+	
+END_VAR
+VAR_INPUT
+	stConfig			:ST_Config_Drops;
+	stPAInDrops			:ST_PAIn_Drops;
+	
+END_VAR
+VAR_OUTPUT
+	stPAOutDrops				:ST_PAOut_Drops;
+END_VAR
+VAR
+	
+	
+END_VAR]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[IF MAIN.stPAIn.stMBits.bMBit10 THEN
+	
+fbValve(stPAIn:=stPAInDrops.stValve,
+		stConfig:=stConfig.stValve,
+		stPaOut=>stPAOutDrops.stValve);
+
+END_IF]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>

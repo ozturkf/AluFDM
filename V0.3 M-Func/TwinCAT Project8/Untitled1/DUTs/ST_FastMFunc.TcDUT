@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4019.2">
+  <DUT Name="ST_FastMFunc" Id="{4de22833-61cf-4753-8b42-26eec52efe31}">
+    <Declaration><![CDATA[TYPE ST_FastMFunc :
+STRUCT
+	bMbit0:			BIT;
+	bMBit1:			BIT;
+	bMBit2:			BIT;
+	bMBit3:			BIT;
+	bMBit4:			BIT;
+	bMBit5:			BIT;
+	bMBit6:			BIT;
+	bMBit7:			BIT;
+	bMBit8:			BIT;
+	bMBit9:			BIT;
+	bMBit10:		BIT;
+	bMBit11:		BIT;
+	bMBit12:		BIT;
+	bMBit13:		BIT;
+	bMBit14:		BIT;
+	bMBit15:		BIT;
+	bMBit16:		BIT;
+	bMBit17:		BIT;
+	bMBit18:		BIT;
+	bMBit19:		BIT;
+	bMBit20:		BIT;
+	bMBit21:		BIT;
+	bMBit22:		BIT;
+	bMBit23:		BIT;
+	bMBit24:		BIT;
+	bMBit25:		BIT;
+	bMBit26:		BIT;
+	bMBit27:		BIT;
+	bMBit28:		BIT;
+	bMBit29:		BIT;
+	bMBit30:		BIT;
+	bMBit31:		BIT;	
+END_STRUCT
+END_TYPE
+]]></Declaration>
+  </DUT>
+</TcPlcObject>
