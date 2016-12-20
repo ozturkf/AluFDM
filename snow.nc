@@ -6,17 +6,12 @@
 ; solid infill extrusion width = 0.58mm
 ; top infill extrusion width = 0.58mm
 
-M107
-M104 S205 ; set temperature
-G28 ; home all axes
-G1 X0 Y0 Z0 F5000 ; lift nozzle
+G1 X0 Y0 Z0 F5000 ; 
 M13 H25;
 M11;
-M109 S205 ; wait for temperature to be reached
-G21 ; set units to millimeters
 G90 ; use absolute coordinates
 G1 Z0.500 F7800.000
-G1 -2.00000 F2400.00000
+G1 -0.50 F2400.00000
 G1 X24.638 Y43.415 F7800.000
 G1 2.00000 F2400.00000
 G1 X25.447 Y43.017 F1800.000
