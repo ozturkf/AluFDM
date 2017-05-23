@@ -8,19 +8,22 @@ N06 R125=1 (Laufvariable Schichten TUM-Logo)
 
 (Fläche drucken)
 N06 G90 Z0.8 F285
+N07 G01 X-20 Y-20 F570
+N08 M10 X-10 (zum Reinigen des Druckkopfs)
 
-N40 @136 R125 K8 K410
+N40 @136 R125 K5 K410
 N41 R123=1
 N42 R124=1
 N43 R122=1
 (TUM-Logo)
-N55 G91 Z0.7 (Höhe für Z-Ebene)
+
+N55 G91 Z0.9 (Höhe für Z-Ebene)
 
 
 (Block 1)
 N99 G90 X-14 Y-15 F570  (Starpunkt mit 2mm Beschleunigungsweg)
 N100 @136 R123 K3 K200
-
+N105 G90 X-15
 N110 G90 X-12.5
 N115 M10 X-10 
 N120 X-7.5
@@ -35,7 +38,7 @@ N192 @100 K-100
 
 (Block 2)
 N200 @136 R124 K10 K299
-N205 G90 X-14 F570
+N205 G90 X-15 F570
 N210 G01 X-12.5
 N215 M10 X-10
 N220 X-7.5
