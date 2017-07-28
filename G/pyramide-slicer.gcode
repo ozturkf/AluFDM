@@ -1,12 +1,10 @@
 
-R20=100
+R20=200
 R21=5000
-G90 G01 Z0.8 F285
-X-20 Y-24.5 F570
- X-10
-9 S400 ; wait for temperature to be reached
-G21 ; set units to millimeters
-G90 ; use absolute coordinates
+
+G90 X-20 Y-20 Z0.8 F285
+Y-10 M10
+
 G1 Z0.950 
 G1 X6.846 Y6.846 
 G1 X-6.846 Y6.846 F285  M10
@@ -245,4 +243,6 @@ G1 X0.398 Y0.255 M10
 G1 X-0.291 Y0.000 
 G1 Z19.000 
 G1 Z19.950 
+Z30 Y24
+
 M30
