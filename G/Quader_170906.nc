@@ -2,6 +2,8 @@ N001 R20=200
 N002 R21=5000
 N003 R101=1 (Laufvariable)
 N004 R102=1
+N005 R22=45
+N006 R23=358
 
 (Linien drucken vorbereiten)
 N101 R11=650 (Duesentemp)
