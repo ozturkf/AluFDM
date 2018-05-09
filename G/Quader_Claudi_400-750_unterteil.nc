@@ -1,5 +1,5 @@
 N001 R20=200 (Periodendauer in ms)
-N002 R21=4000 (Ventilöffnung in us)
+N002 R21=3500 (Ventilöffnung in us)
 N003 R101=1 (Laufvariable)
 N004 R102=1
 
@@ -57,7 +57,7 @@ N235 X11		   (Fahrt auf X11)
 N236 R102=1		   (Rücksetzen der Laufvariable 102 auf 1)
 N237 @714		   (Dekoder Stopp, notwendig vor Temperatur Aenderung)
 N238 R11=700
-N239 R10=400
+N239 R10=300
 N240 M11
 N241 M0
 
