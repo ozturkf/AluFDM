@@ -1,5 +1,5 @@
 N001 R20=200 (Periodendauer in ms)
-N002 R21=5000 (Ventilöffnung in us)
+N002 R21=4500 (Ventilöffnung in us)
 N003 R101=1 (Laufvariable)
 N004 R102=1
 
@@ -12,9 +12,8 @@ N110 G01 X-25 Y-13 Z0 F330 (Geradeninterpolation zu Koordinate mit Geschwindigke
 N111 Z0.9		   (Geradeninterpolation nach Z0.9)
 N112 X-20		   (Geradeninterpolation nach x-20-> jetzt auf Koordinate x-20/Y-13/Z0.9)
 N113 M10 X-10		   (Druckimpuls mit M10 und Fahrt nach X-10/Y-13/Z0.9)(Testlinie)
-
-N114 @714
-N115 R21=4500
+N114 X-20
+N115 M10 X-10
 
 (Drucken der ersten Schicht Quader1)
 
@@ -41,8 +40,8 @@ N136 R102=1		   (Rücksetzen der Laufvariable 102 auf 1)
 (Drucken der ersten Schicht Quader2)
 
 
-N220 G90 X-25 Y0	   (Fahrt zur absoluten Koordinate X-25/Y-10)
-N221 Y2			   (Fahrt zur Absoluten Koordinate Y-8)
+N220 G90 X-25 Y0 F1000	   (Fahrt zur absoluten Koordinate X-25/Y-10)
+N221 Y2	F330		   (Fahrt zur Absoluten Koordinate Y-8)
 N222 @136 R102 K2 K233     (Schleifenbefehl wenn Laufvariable R102 Kleiner gleich 2, falls nicht dann auf Zeile K133 springen)
 N223 G90 X-23		   (Fahrt zu X-23)
 N224 X9 M10		   (Fahrt bis X9 und gleichzeitiger Druckimpuls)
@@ -71,8 +70,8 @@ N241 M0
 N302 @136 R101 K3 K349 (Schleife für 3maliges Fahren der Route)
 N303 G91 Z0.8   (Für jede Schicht um 0.88 absenken)
 
-N304 G90 X-25 Y-10  (Startpunkt Quader1)
-N305 Y-8
+N304 G90 X-25 Y-10 F1000  (Startpunkt Quader1)
+N305 Y-8 F330
 N310 @136 R102 K2 K321 (Drucken der Schicht Quader 1)
 N311 G90 X-23
 N312 X9 M10
@@ -91,8 +90,8 @@ N324 R102=1
 
 N330 
 
-N331 G90 X-25 Y0    (Startpunkt Quader 2) 
-N332 Y2
+N331 G90 X-25 Y0 F1000   (Startpunkt Quader 2) 
+N332 Y2 F330
 N333 @136 R102 K2 K344 (Drucken der Schicht Quader2)
 N334 G90 X-23
 N335 X9 M10
