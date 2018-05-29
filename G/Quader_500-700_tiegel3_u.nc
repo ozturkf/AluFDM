@@ -1,11 +1,11 @@
 N001 R20=200 (Periodendauer in ms)
-N002 R21=2000 (Ventilöffnung in us)
+N002 R21=7700 (Ventilöffnung in us)
 N003 R101=1 (Laufvariable)
 N004 R102=1
 
 (Linien drucken vorbereiten)
 N101 R11=700 (Duesentemp)
-N102 R10=400 (Platform Temp)
+N102 R10=500 (Platform Temp)
 N103 M11 (Temperatur Check)
 N104 M0	 (Reset T-Check, kommt immer nach M11)
 N110 G01 X-25 Y-13 Z0 F330 (Geradeninterpolation zu Koordinate mit Geschwindigkeit 330mm/min)

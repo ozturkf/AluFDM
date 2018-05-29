@@ -1,5 +1,5 @@
 N001 R20=200 (Periodendauer in ms)
-N002 R21=2000 (Ventilöffnung in us)
+N002 R21=7700 (Ventilöffnung in us)
 N003 R101=1 (Laufvariable)
 N004 R102=1
 N005 R11=700
