@@ -1,0 +1,53 @@
+N001 R20=300 (Periodendauer in ms)
+N002 R21=900 (Ventilöffnung in us)
+N003 R22=1300 (Nozzle pressure)
+N004 R23=20 (Oxygen Concentration)
+N005 R101=1 (Layers)
+N006 R102=1	(# of Lines)
+N007 R11=650 (Nozzle Temp)
+N008 R10=450 (Platform Temp)
+N049 M11 (CheckTemp)
+N050 M0  (ConfirmTemp)
+
+
+N110 G01 X-25 Y20 Z0 F330 (Geradeninterpolation zu Koordinate mit Geschwindigkeit 660mm/min)
+N111 X-20		     (Geradeninterpolation nach x-20-> jetzt auf Koordinate x-20/Y-13/Z0.9)
+N112 M10 X0		     (Druckimpuls mit M10 und Fahrt nach X-10/Y-13/Z0.9)(Testlinie)
+
+(Drucken der nächsten 3 Schichten Quader1)
+
+N202 @136 R101 K13 K450 (Schleife für 12maliges Fahren der Route)
+N203 G91 Z0.4   (Für jede Schicht um 0.4 absenken)
+
+N204 G90 X-25 Y15  (Startpunkt Quader1)
+N205 Y-8
+N210 @136 R102 K8 K300 (Drucken der Schicht Quader 1)
+N211 G90 X-24 F2000
+N212 X-20 F330
+N213 X12 M10
+N214 X17
+N215 G91 Y-0.65 Q1=14
+N219 R102=R102+1
+N220 @100 K-210
+N300 R102=1
+
+N340 
+
+N350 G90 X-25 Y5    (Startpunkt Quader 2) 
+N400 Y2
+N401 @136 R102 K8 K447 (Drucken der Schicht Quader2)
+N411 G90 X-24 F2000
+N412 X-20 F330
+N413 X12 M10
+N414 X17
+N415 G91 Y-0.65 Q1=14
+N419 R102=R102+1
+N420 @100 K-401
+N447 R102=1
+
+N448 R101=R101+1
+N449 @100 K-202
+N450 R101=1
+
+N900 X0 Y25 Z30 F300
+N901 M30

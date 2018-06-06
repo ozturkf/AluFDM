@@ -1,0 +1,8 @@
+N003 R11=700					(Druckkopftemperatur Schmelztiegel initialisieren)
+N004 R10=450					(Plattformtemperautr initialisieren)
+N090 M11						(Temperaturcheck durchführen)
+N091 M0 						(Reset, immer nach M11)
+N095 G90 Q1=100 F100
+N097 Q1=300 F200
+N098 Q1=1000 F600
+N100 Q1=2200 F1200
