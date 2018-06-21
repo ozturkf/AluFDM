@@ -1,5 +1,5 @@
-﻿N001 R20=200
-N002 R21=9000 (Ventilöffnung in us bestimmt die Volumenmenge, die ausgestoßen wird)
+N001 R20=200
+N002 R21=8000 (Ventilöffnung in us bestimmt die Volumenmenge, die ausgestoßen wird)
 N003 R11=700 (Druckkopftemperatur Schmelztiegel initialisieren)
 N004 R10=450 (Plattformtemperautr initialisieren)
 N005 R101=1 (Laufvariable)
