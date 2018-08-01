@@ -1,12 +1,12 @@
 N001 R20=200 (Periodendauer in ms)
-N002 R21=6300 (Ventilöffnung in us)
-N003 R22=1200 (Ventildruck)
+N002 R21=7000 (Ventilöffnung in us)
+N003 R22=1500 (Ventildruck)
 N004 R101=1 (Laufvariable)
 N005 R102=1
 
 (Linien drucken vorbereiten)
-N101 R11=700 (Duesentemp)
-N102 R10=500 (Platform Temp)
+N101 R11=650 (Duesentemp)
+N102 R10=400 (Platform Temp)
 N103 M11 (Temperatur Check)
 N104 M0	 (Reset T-Check, kommt immer nach M11)
 N110 G01 X-24 Y-13 Z0 F330 (Geradeninterpolation zu Koordinate mit Geschwindigkeit 330mm/min)
@@ -14,7 +14,7 @@ N111 Z0.9		   (Geradeninterpolation nach Z0.9)
 N112 X-20		   (Geradeninterpolation nach x-20-> jetzt auf Koordinate x-20/Y-13/Z0.9)
 N113 M10 X0		   (Druckimpuls mit M10 und Fahrt nach X-10/Y-13/Z0.9)(Testlinie)
 N114 @714
-N115 R22=1000
+N115 R22=1200
 
 (Drucken der ersten Schicht Quader1)
 
@@ -80,8 +80,8 @@ N334 X9 M10		   (Fahrt auf X9 mit gleichzeitigem Drucken)
 N335 X11		   (Fahrt auf X11)
 N336 R102=1		   (Rücksetzen der Laufvariable 102 auf 1)
 N337 @714		   (Dekoder Stopp, notwendig vor Temperatur Aenderung)
-N338 R11=700
-N339 R10=550
+N338 R11=650
+N339 R10=400
 N340 M11
 N341 M0
 

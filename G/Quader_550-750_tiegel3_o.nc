@@ -1,10 +1,10 @@
 N001 R20=200 (Periodendauer in ms)
 N002 R21=7000 (Ventilöffnung in us)
-N003 R22=1500
+N003 R22=1200
 N004 R101=1 (Laufvariable)
 N005 R102=1
-N006 R11=700
-N007 R10=400
+N006 R11=750
+N007 R10=550
 N008 M11
 N009 M0
 
@@ -13,7 +13,7 @@ N110 G01 X-24 Y-13 F1000 (Geradeninterpolation zu Koordinate mit Geschwindigkeit
 N111 X-20 F330	     (Geradeninterpolation nach x-20-> jetzt auf Koordinate x-20/Y-13/Z0.9)
 N112 M10 X0		     (Druckimpuls mit M10 und Fahrt nach X-10/Y-13/Z0.9)(Testlinie)
 N113 @714
-N114 R22=1200
+N114 R22=1000
 
 N231 G90 X-24 Y0 F1000   (Startpunkt Quader 2) 
 N232 Y2 F330

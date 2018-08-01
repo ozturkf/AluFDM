@@ -1,5 +1,5 @@
 N001 R20=200 (Periodendauer in ms)
-N002 R21=6300 (Ventilöffnung in us)
+N002 R21=7000 (Ventilöffnung in us)
 N003 R22=1200 (Ventildruck)
 N004 R101=1 (Laufvariable)
 N005 R102=1
@@ -80,7 +80,7 @@ N334 X9 M10		   (Fahrt auf X9 mit gleichzeitigem Drucken)
 N335 X11		   (Fahrt auf X11)
 N336 R102=1		   (Rücksetzen der Laufvariable 102 auf 1)
 N337 @714		   (Dekoder Stopp, notwendig vor Temperatur Aenderung)
-N338 R11=700
+N338 R11=750
 N339 R10=550
 N340 M11
 N341 M0
