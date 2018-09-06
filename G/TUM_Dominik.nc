@@ -1,7 +1,7 @@
 N001 R20=200
-N002 R21=8000 (Ventilöffnung in us bestimmt die Volumenmenge, die ausgestoßen wird)
+N002 R21=7000 (Ventilöffnung in us bestimmt die Volumenmenge, die ausgestoßen wird)
 N003 R11=700 (Druckkopftemperatur Schmelztiegel initialisieren)
-N004 R10=450 (Plattformtemperautr initialisieren)
+N004 R10=450 (Plattformtemperatur initialisieren)
 N005 R101=1 (Laufvariable)
 N006 R102=1 (Laufvariable)
 N007 R22=1800 (Nozzle pressure)
@@ -31,7 +31,7 @@ N128 M10 X3.2
 N129 X3.4
 N130 Y1
 N131 G90 X-22 F1000
-N132 G91 Q1=35.9 F2100
+N132 G91 Q1=35.6 F1000				(alter 35.6)			
 N150 R101=R101+1
 N151 @100 K-120
 
@@ -50,7 +50,7 @@ N171 M10 X3.2
 N172 X3.4
 N173 Y1
 N174 G90 X-22 F1000
-N175 G91 Q1=29.4 F2100
+N175 G91 Q1=29.4 F1000				(alter Wert 29.4)
 N192 R101=R101+1
 N193 @100 K-161
 
@@ -62,13 +62,13 @@ N214 X3.4
 N215 M10 X13.2
 N216 Y1
 N217 G90 X-22 F1000
-N218 G91 Q1=55.6 F2100
+N218 G91 Q1=55.9 F1000				(alter Wert 55.9)	
 N225 R101=R101+1
 N226 @100 K-211
 
 N240 R101=1
 N241 R102=R102+1
-N242 G91 Z0.8
+N242 G91 Z0.9
 N260 @100 K-110
 
 N900 M30

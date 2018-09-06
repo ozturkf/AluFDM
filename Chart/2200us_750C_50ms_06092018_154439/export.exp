@@ -1,0 +1,26 @@
+[COMMENT]
+Comment=No comment entered.
+RecordAnnotation=
+[EXPORTINFO]
+Type=jpg
+Name=2200us_750C_50ms
+[CAMERA]
+Manufacturer=Mikrotron GmbH
+Model=MotionBLITZ EoSens mini2
+Framerate=5000
+Shuttertime=10
+Serial=00122
+Firmware=B2.03-F0.84-V4.68
+[RECORD]
+StartTime=06.09.2018 15:43:18
+ImageCount=401
+[IMAGEDESCRIPTION]
+ImageWidth=256
+ImageHeight=764
+ImageFormat=GRAY8
+[SEQUENCEINFORMATION]
+NumberofFrames_00=401
+TriggerFrameNumber_00=-2837
+TriggerRefTime_00=332,5616
+[EXPORTEDIMAGES]
+0=4500-4900:401
