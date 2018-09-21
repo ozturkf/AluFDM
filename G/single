@@ -1,8 +1,8 @@
 N004 R23=20 (Oxygen Concentration)
 N005 R101=1 (Layers)
 N006 R102=1	(# of Lines)
-N007 R11=700 (Nozzle Temp)
-N008 R10=500 (Platform Temp)
+N007 R11=750 (Nozzle Temp)
+N008 R10=550 (Platform Temp)
 N049 M11 (CheckTemp)
 N050 M0  (ConfirmTemp)
 
@@ -16,8 +16,8 @@ N112 M10 X0
 N150 @136 R101 K2 K980 (Schleife für 12maliges Fahren der Route)
 N151 G91 Z0.6  (Für jede Schicht um 0.4 absenken)
 N152 R20=100 (Periodendauer in ms)
-N153 R21=1300 (Ventilöffnung in us)
-N154 R22=1100 (Nozzle pressure)
+N153 R21=800 (Ventilöffnung in us)
+N154 R22=740 (Nozzle pressure)
 
 N204 G90 X-24 Y-8  (Startpunkt Quader1)
 N205 Y-10
